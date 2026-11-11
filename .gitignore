@@ -31,3 +31,6 @@ desktop.ini
 # DSH / 本地工具缓存
 .dsh/
 *.local.md
+
+# 本地调研素材（DSH 插件市场/关键词数据，不纳入工程仓库）
+dsh-plugin-guide/

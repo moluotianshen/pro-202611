@@ -1,6 +1,4 @@
-window.__ModuleLoader__.load({
-  id: 'dsh-context-broom',
-  factory(require) {
+function contextBroomFactory(require) {
     const React = require('react');
     const ReactDOM = require('react-dom');
     const h = React.createElement;
@@ -470,5 +468,12 @@ window.__ModuleLoader__.load({
         }, ContextBroom));
       },
     };
-  },
-});
+}
+
+// The Host composes this bundle's Client module under the package name it was
+// installed as. A profile that still carries the pre-publication `@local/...`
+// record keeps requesting that id until the whole Host restarts, so both ids
+// are registered against one factory: the loader only ever evaluates the id a
+// page actually requests, so exactly one instance runs per page.
+window.__ModuleLoader__.load({ id: 'dsh-context-broom', factory: contextBroomFactory });
+window.__ModuleLoader__.load({ id: '@local/dsh-context-broom', factory: contextBroomFactory });

@@ -1,0 +1,46 @@
+{
+  "name": "dsh-context-broom",
+  "version": "1.0.0",
+  "description": "A broom button beside the DSH web composer that draws the current context occupancy on its own frame, shifting green to yellow to red as it fills, and compacts the session when clicked.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "context",
+    "compaction"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moluotianshen/pro-202611.git",
+    "directory": "plugins/context-broom"
+  },
+  "homepage": "https://github.com/moluotianshen/pro-202611/tree/main/plugins/context-broom",
+  "bugs": {
+    "url": "https://github.com/moluotianshen/pro-202611/issues"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}

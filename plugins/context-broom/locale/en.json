@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Context Broom",
+    "description": "Adds a broom button under the composer: its frame shows the current context usage, shifting from green to yellow to red as it fills up, and clicking it compacts the session context."
+  }
+}
